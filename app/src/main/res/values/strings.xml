@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Just Move</string>
+    <string name="equipment_prompt">Equipment to Include</string>
+    <string name="movement_prompt">Movements to Include</string>
+
+    <string-array name="equipment_array1">
+        <item>Any</item>
+        <item>Dumbbell</item>
+        <item>Barbell</item>
+        <item>Treadmill</item>
+        <item>Medicine Ball</item>
+        <item>Jump Rope</item>
+    </string-array>
+
+    <string-array name="equipment_array2">
+        <item>Dumbbell</item>
+        <item>Barbell</item>
+        <item>Treadmill</item>
+        <item>Medicine Ball</item>
+        <item>Jump Rope</item>
+    </string-array>
+
+    <string-array name="movement_array1">
+        <item>Any</item>
+        <item>Squat</item>
+        <item>Push up</item>
+        <item>Sit up</item>
+        <item>Pull up</item>
+        <item>Muscle Up</item>
+        <item>Thrusters</item>
+        <item>Cleans</item>
+        <item>Snatch</item>
+        <item>Run</item>
+        <item>Burpees</item>
+    </string-array>
+
+    <string-array name="movement_array2">
+        <item>Squat</item>
+        <item>Push up</item>
+        <item>Sit up</item>
+        <item>Pull up</item>
+        <item>Muscle Up</item>
+        <item>Thrusters</item>
+        <item>Cleans</item>
+        <item>Snatch</item>
+        <item>Run</item>
+        <item>Burpees</item>
+    </string-array>
+</resources>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kettlebell"
+    android:orientation="vertical"
+    tools:context="com.example.android.workoutgenerator.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="20dp">
+            <!--The below can be used as a transparent background for the title
+            similar to the equipment and movement boxes
+            android:background="#9A252839">
+            -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pacifico"
+                android:gravity="center"
+                android:text="FitnessBud"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="40sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CC252839"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:text="Equipment:"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp" />
+
+                <Spinner
+                    android:id="@+id/equipment_spinner1"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/equipment_array1"
+                    android:spinnerMode="dialog" />
+
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_effect"
+                    android:onClick="addEquipment"
+                    android:text="Add"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/equipment_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CC252839"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:textSize="24sp" />
+
+                <Spinner
+                    android:id="@+id/equipment_spinner2"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/equipment_array2"
+                    android:spinnerMode="dialog"
+                    />
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_effect"
+                    android:onClick="removeEquipment"
+                    android:text="Remove" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/equipment_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CC252839"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+
+                    android:gravity="center"
+                    android:textSize="24sp" />
+
+                <Spinner
+                    android:id="@+id/equipment_spinner3"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/equipment_array2"
+                    android:spinnerMode="dialog"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="#CC252839"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:text="Movements:"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp" />
+
+                <Spinner
+                    android:id="@+id/movements_spinner1"
+                    style="@style/mySpinnerItemStyle"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/movement_array1"
+                    android:spinnerMode="dialog" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_effect"
+                    android:onClick="addMovement"
+                    android:text="Add" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movement_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CC252839"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:textSize="24sp" />
+
+                <Spinner
+                    android:id="@+id/movements_spinner2"
+                    style="@style/mySpinnerItemStyle"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/movement_array2"
+                    android:spinnerMode="dialog"
+
+                    />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_effect"
+                    android:onClick="removeMovement"
+                    android:text="Remove" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movement_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CC252839"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:textSize="24sp" />
+
+                <Spinner
+                    android:id="@+id/movements_spinner3"
+                    style="@style/mySpinnerItemStyle"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/movement_array2"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/generate"
+            style="@style/ButtonStyle"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ripple_effect"
+            android:onClick="submit"
+            android:text="Generate workouts" />
+
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_effect"
+            android:gravity="center"
+            android:onClick="savedWorkouts"
+            android:text="Saved Workouts"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/display_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+
