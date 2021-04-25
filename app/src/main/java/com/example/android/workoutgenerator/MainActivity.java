@@ -4,15 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.android.workoutgenerator.data.WorkoutDbHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = new DatabaseHelper(this);
-        mTextUsername = (EditText)findViewById(R.id.username);
-        mTextPassword = (EditText)findViewById(R.id.password);
+        mTextUsername = (EditText)findViewById(R.id.cfm_pw);
+        mTextPassword = (EditText)findViewById(R.id.cfm_pw);
         mButtonForgotPw = (Button)findViewById(R.id.btnForgotPassword);
-        mButtonLogin = (Button)findViewById(R.id.btnLogin);
+        mButtonLogin = (Button)findViewById(R.id.btnConfirm);
         mButtonCreateAcc = (Button)findViewById(R.id.btnCreateAccount);
         mButtonCreateAcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this,"Login Error",Toast.LENGTH_SHORT).show();
+                    mTextPassword.setError("Invalid login credentials");
                 }
             }
         });
@@ -62,16 +57,10 @@ public class MainActivity extends AppCompatActivity {
         mButtonForgotPw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = mTextUsername.getText().toString().trim();
-                String password = mTextPassword.getText().toString().trim();
-                Boolean res = db.checkUser(user,password);
-                if(res==true) {
-                    Toast.makeText(MainActivity.this,"Succesfully Logged in",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this,HomeActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(MainActivity.this,"Login Error",Toast.LENGTH_SHORT).show();
-                }
+                Intent registerIntent = new Intent (MainActivity.this,resetPasswordActivity.class);
+                startActivity(registerIntent);
+
+            }
         });
 
 

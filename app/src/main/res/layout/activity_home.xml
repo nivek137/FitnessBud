@@ -165,7 +165,7 @@
                     android:textSize="24sp" />
 
                 <Spinner
-                    android:id="@+id/password"
+                    android:id="@+id/cfm_pw"
                     style="@style/mySpinnerItemStyle"
                     android:layout_width="180dp"
                     android:layout_height="48dp"
@@ -248,7 +248,7 @@
 
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnConfirm"
             style="@style/ButtonStyle"
             android:layout_width="160dp"
             android:layout_height="48dp"

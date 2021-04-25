@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
         equipSpinner2.setAdapter(equipAdapter2);
         equipSpinner3.setAdapter(equipAdapter2);
 
-        Spinner moveSpinner1 = (Spinner) findViewById(R.id.password);
+        Spinner moveSpinner1 = (Spinner) findViewById(R.id.cfm_pw);
         Spinner moveSpinner2 = (Spinner) findViewById(R.id.movements_spinner2);
         Spinner moveSpinner3 = (Spinner) findViewById(R.id.movements_spinner3);
         ArrayAdapter moveAdapter1 = ArrayAdapter.createFromResource(this,
@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
     public void submit(View view){
         Intent intent = new Intent(this, WorkoutActivity.class);
         Spinner equipSpinner1 = (Spinner) findViewById(R.id.equipment_spinner1);
-        Spinner movementSpinner1 = (Spinner) findViewById(R.id.password);
+        Spinner movementSpinner1 = (Spinner) findViewById(R.id.cfm_pw);
         String equipSelection1 = equipSpinner1.getSelectedItem().toString();
         String movementSelection1 = movementSpinner1.getSelectedItem().toString();
         intent.putExtra("EquipSelection1", equipSelection1);

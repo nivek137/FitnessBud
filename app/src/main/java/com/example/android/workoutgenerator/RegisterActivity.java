@@ -23,10 +23,10 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         db = new DatabaseHelper(this);
-        mTextUsername = (EditText)findViewById(R.id.username);
-        mTextPassword = (EditText)findViewById(R.id.password);
+        mTextUsername = (EditText)findViewById(R.id.cfm_pw);
+        mTextPassword = (EditText)findViewById(R.id.cfm_pw);
         mTextCnfPassword = (EditText)findViewById(R.id.cfmpassword);
-        mButtonRegister = (Button)findViewById(R.id.button_register);
+        mButtonRegister = (Button)findViewById(R.id.button_reset_pw);
 
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
