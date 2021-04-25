@@ -53,17 +53,28 @@
                     android:layout_width="140dp"
                     android:layout_height="48dp"
                     android:gravity="center"
-                    android:text="Username"
+                    android:text="Equipment:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp" />
 
-                <EditText
-                    android:id="@+id/username"
-                    android:layout_width="250dp"
+                <Spinner
+                    android:id="@+id/equipment_spinner1"
+                    android:layout_width="180dp"
                     android:layout_height="48dp"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:entries="@array/equipment_array1"
                     android:spinnerMode="dialog" />
+
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_effect"
+                    android:onClick="addEquipment"
+                    android:text="Add"
+                    />
 
 
             </LinearLayout>
@@ -149,16 +160,27 @@
                     android:layout_width="140dp"
                     android:layout_height="48dp"
                     android:gravity="center"
-                    android:text="Password"
+                    android:text="Movements:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/password"
                     style="@style/mySpinnerItemStyle"
-                    android:layout_width="250dp"
+                    android:layout_width="180dp"
                     android:layout_height="48dp"
-                    android:backgroundTint="@color/colorPrimaryDark" />
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/movement_array1"
+                    android:spinnerMode="dialog" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_effect"
+                    android:onClick="addMovement"
+                    android:text="Add" />
 
             </LinearLayout>
 
@@ -233,11 +255,10 @@
             android:layout_gravity="center"
             android:background="@drawable/ripple_effect"
             android:onClick="submit"
-            android:text="Login" />
+            android:text="Generate workouts" />
 
 
         <Button
-            android:id="@+id/btnCreateAccount"
             style="@style/ButtonStyle"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
@@ -246,22 +267,8 @@
             android:background="@drawable/ripple_effect"
             android:gravity="center"
             android:onClick="savedWorkouts"
-            android:text="Create Account"
+            android:text="Saved Workouts"
             android:textColor="@color/colorPrimaryDark" />
-
-        <Button
-            android:id="@+id/btnForgotPassword"
-            style="@style/ButtonStyle"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ripple_effect"
-            android:gravity="center"
-            android:onClick="savedWorkouts"
-            android:text="Forgot Password"
-            android:textColor="@color/colorPrimaryDark"/>
-
 
         <TextView
             android:id="@+id/display_text_view"
