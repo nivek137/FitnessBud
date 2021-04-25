@@ -70,11 +70,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             return false;
     }
 
-    public void changePassword(String password, String name){
+    public boolean changePassword(String password, String name){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(COL_2,name);
         values.put(COL_3,password);
-        db.update(TABLE_NAME,values,COL_2+"=?",new String[] {name});
-        db.close();
+        db.update(TABLE_NAME,values,"username = ?",new String[] {name});
+        return true;
     }
 }
