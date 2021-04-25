@@ -62,9 +62,16 @@ public class MainActivity extends AppCompatActivity {
         mButtonForgotPw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent (MainActivity.this,resetPasswordActivity.class);
-                startActivity(registerIntent);
-            }
+                String user = mTextUsername.getText().toString().trim();
+                String password = mTextPassword.getText().toString().trim();
+                Boolean res = db.checkUser(user,password);
+                if(res==true) {
+                    Toast.makeText(MainActivity.this,"Succesfully Logged in",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(MainActivity.this,"Login Error",Toast.LENGTH_SHORT).show();
+                }
         });
 
 
