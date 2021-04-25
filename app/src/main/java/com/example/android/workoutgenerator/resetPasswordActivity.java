@@ -30,6 +30,7 @@ public class resetPasswordActivity extends AppCompatActivity {
                 Boolean checkUser = db.checkUsername(username);
                 if(checkUser == true) {
                     Intent intent = new Intent(resetPasswordActivity.this,resetPassword2Activity.class);
+                    intent.putExtra("username",username);
                     startActivity(intent);
                 } else {
                     Toast.makeText(resetPasswordActivity.this,"Username does not exist",Toast.LENGTH_SHORT).show();

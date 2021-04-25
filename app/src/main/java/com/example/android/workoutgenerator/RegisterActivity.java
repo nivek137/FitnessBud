@@ -23,8 +23,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         db = new DatabaseHelper(this);
-        mTextUsername = (EditText)findViewById(R.id.cfm_pw);
-        mTextPassword = (EditText)findViewById(R.id.cfm_pw);
+        mTextUsername = (EditText)findViewById(R.id.registerUsername);
+        mTextPassword = (EditText)findViewById(R.id.registerPassword);
         mTextCnfPassword = (EditText)findViewById(R.id.cfmpassword);
         mButtonRegister = (Button)findViewById(R.id.button_reset_pw);
 

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = new DatabaseHelper(this);
-        mTextUsername = (EditText)findViewById(R.id.cfm_pw);
+        mTextUsername = (EditText)findViewById(R.id.username);
         mTextPassword = (EditText)findViewById(R.id.cfm_pw);
         mButtonForgotPw = (Button)findViewById(R.id.btnForgotPassword);
         mButtonLogin = (Button)findViewById(R.id.btnConfirm);

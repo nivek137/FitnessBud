@@ -54,13 +54,27 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             return  false;
     }
 
-    public boolean checkUsername(String username) {
-        SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("Select * from user where username = ?", new String[] {COL_2});
-        if(cursor.getCount()>0)
+    public boolean checkUsername(String username){
+        String[] columns = { COL_1 };
+        SQLiteDatabase MyDB = getReadableDatabase();
+        String selection = COL_2 + "=?";
+        String[] selectionArgs = {username};
+        Cursor cursor = MyDB.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
+        int count = cursor.getCount();
+        cursor.close();
+        MyDB.close();
+
+        if(count>0)
             return true;
         else
             return false;
+    }
 
+    public void changePassword(String password, String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_3,password);
+        db.update(TABLE_NAME,values,COL_2+"=?",new String[] {name});
+        db.close();
     }
 }
