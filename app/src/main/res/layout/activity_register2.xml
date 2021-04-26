@@ -52,12 +52,12 @@
                     android:layout_width="140dp"
                     android:layout_height="48dp"
                     android:gravity="center"
-                    android:text="Username:"
+                    android:text="First Name:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/registerUsername"
+                    android:id="@+id/first_name"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,12 +87,12 @@
                     android:layout_width="140dp"
                     android:layout_height="48dp"
                     android:gravity="center"
-                    android:text="E-mail:"
+                    android:text="Last Name:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/last_name"
                     android:layout_width="251dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -112,22 +112,24 @@
                 android:layout_width="388dp"
                 android:layout_height="wrap_content"
                 android:background="#CC252839"
+                android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
+
                 <TextView
-                    android:id="@+id/textView5"
+
                     android:layout_width="149dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Password:"
+                    android:text="Weight:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/registerPassword"
+                    android:id="@+id/weight"
                     android:layout_width="257dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:ems="10"
                     android:text="" />
@@ -144,30 +146,99 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#CC252839"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/text_age"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Confirm Password:"
+                    android:text="Age:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/cfmpassword"
-                    android:layout_width="257dp"
+                <Spinner
+                    android:id="@+id/age_spinner"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/age_array"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="387dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CC252839"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_gender"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:ems="10" />
+                    android:gravity="center"
+                    android:text="Gender:"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/gender_spinner"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/gender_array"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="387dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CC252839"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Height"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/height_spinner"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:entries="@array/height_array"
+                    android:spinnerMode="dialog" />
             </LinearLayout>
         </LinearLayout>
 
         <Button
             style="@style/ButtonStyle"
-            android:id="@+id/button_reset_pw"
+            android:id="@+id/button_register2"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -180,7 +251,5 @@
 
     </LinearLayout>
 </ScrollView>
-
-
 
 

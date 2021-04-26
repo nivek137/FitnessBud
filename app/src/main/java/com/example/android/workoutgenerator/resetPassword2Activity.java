@@ -24,6 +24,7 @@ public class resetPassword2Activity extends AppCompatActivity {
         final String username = bundle.getString("username");
         etPw = (EditText)findViewById(R.id.pw);
         etCfmPw = (EditText)findViewById(R.id.cfm_pw);
+
         confirm = (Button)findViewById(R.id.btnConfirm);
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override

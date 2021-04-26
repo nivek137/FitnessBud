@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
@@ -13,6 +14,7 @@ import com.example.android.workoutgenerator.data.WorkoutDbHelper;
 public class HomeActivity extends AppCompatActivity {
     int equipCount = 1;
     int movementCount = 1;
+    Button buttonProfile;
 
     private WorkoutDbHelper mDbHelper;
     @Override
@@ -51,7 +53,14 @@ public class HomeActivity extends AppCompatActivity {
 
         mDbHelper = new WorkoutDbHelper(this);
 
-
+        buttonProfile = (Button)findViewById(R.id.btnProfile);
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, resetPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

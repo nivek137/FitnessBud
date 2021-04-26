@@ -270,6 +270,18 @@
             android:text="Saved Workouts"
             android:textColor="@color/colorPrimaryDark" />
 
+        <Button
+            android:id="@+id/btnProfile"
+            style="@style/ButtonStyle"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_effect"
+            android:gravity="center"
+            android:text="Profile"
+            android:textColor="@color/colorPrimaryDark" />
+
         <TextView
             android:id="@+id/display_text_view"
             android:layout_width="wrap_content"

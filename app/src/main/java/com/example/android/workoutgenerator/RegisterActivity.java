@@ -15,7 +15,6 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mTextPassword;
     EditText mTextCnfPassword;
     Button mButtonRegister;
-    TextView mTextViewLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +30,21 @@ public class RegisterActivity extends AppCompatActivity {
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = mTextUsername.getText().toString().trim();
+                String username = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
                 String cnf_pwd = mTextCnfPassword.getText().toString().trim();
 
                 if(pwd.equals(cnf_pwd)){
-                    long val = db.addUser(user,pwd);
+                    long val = db.addUser(username,pwd);
                     if(val > 0){
+                        System.out.println("hello reg 1");
                         Toast.makeText(RegisterActivity.this,"You have registered",Toast.LENGTH_SHORT).show();
-                        Intent moveToLogin = new Intent(RegisterActivity.this,MainActivity.class);
+                        Intent moveToLogin = new Intent(RegisterActivity.this,RegisterActivity2.class);
+                        moveToLogin.putExtra("username",username);
                         startActivity(moveToLogin);
                     }
                     else{
-                        Toast.makeText(RegisterActivity.this,"Registeration Error",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this,"Registration Error",Toast.LENGTH_SHORT).show();
                     }
 
                 }
