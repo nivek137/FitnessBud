@@ -23,6 +23,7 @@
         <activity android:name=".resetPasswordActivity"></activity>
         <activity android:name="resetPassword2Activity"></activity>
         <activity android:name=".RegisterActivity2"></activity>
+        <activity android:name=".ProfileActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
