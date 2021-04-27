@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Just Move</string>
+    <string name="app_name">FitnessBud</string>
     <string name="equipment_prompt">Equipment to Include</string>
     <string name="movement_prompt">Movements to Include</string>
 

@@ -65,7 +65,7 @@ public class ChangeAccountActivity extends AppCompatActivity {
                 String gender = mGenderSpinner.getSelectedItem().toString();
                 boolean res = db.addInformation(username, fName, lName, weight,age, gender, height);
                 if(res == true) {
-                    Intent intent = new Intent(ChangeAccountActivity.this, MainActivity.class);
+                    Intent intent = new Intent(ChangeAccountActivity.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(ChangeAccountActivity.this,"Update Error",Toast.LENGTH_SHORT).show();

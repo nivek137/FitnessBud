@@ -25,7 +25,7 @@
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/justmovesplash</item>
+        <item name="android:windowBackground">@drawable/fitbudsplash</item>
     </style>
 
 

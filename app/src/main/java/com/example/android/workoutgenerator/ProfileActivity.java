@@ -65,15 +65,6 @@ public class ProfileActivity extends AppCompatActivity {
         }
         while(res.moveToNext()) {
             if(res.getString(1).equals(username)) {
-                System.out.println(res.getString(0));
-                System.out.println(res.getString(1));
-                System.out.println(res.getString(2));
-                System.out.println(res.getString(3));
-                System.out.println(res.getString(4));
-                System.out.println(res.getString(5));
-                System.out.println(res.getString(6));
-                System.out.println(res.getString(7));
-                System.out.println(res.getString(8));
 
                 mUsername.setText(res.getString(1));
                 mFirstname.setText(res.getString(3));
