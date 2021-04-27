@@ -59,6 +59,7 @@
                 <EditText
                     android:id="@+id/registerUsername"
                     android:layout_width="250dp"
+                    android:textColor="#E6AC55"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -93,6 +94,7 @@
 
                 <EditText
                     android:id="@+id/email"
+                    android:textColor="#E6AC55"
                     android:layout_width="251dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -127,6 +129,7 @@
                 <EditText
                     android:id="@+id/registerPassword"
                     android:layout_width="257dp"
+                    android:textColor="#E6AC55"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -159,6 +162,7 @@
                 <EditText
                     android:id="@+id/cfmpassword"
                     android:layout_width="257dp"
+                    android:textColor="#E6AC55"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:ems="10" />

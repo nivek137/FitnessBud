@@ -100,9 +100,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return true;
     }
 
-    public Cursor viewData() {
+    public Cursor viewData(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from registeruser",null);
-        return cursor;
+        Cursor f = db.rawQuery("select * from "+TABLE_NAME,null);//"SELECT " + "*" + " FROM registeruser WHERE username = '" + username+"'",null);
+        return f;
     }
 }

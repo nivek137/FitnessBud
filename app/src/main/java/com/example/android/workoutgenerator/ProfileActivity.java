@@ -11,8 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
-    TextView mUsername;
-    EditText mFirstname,mLastname,mWeight,mAge,mGender,mHeight;
+    TextView mUsername,mFirstname,mLastname,mWeight,mAge,mGender,mHeight;;
     DatabaseHelper db;
     String fName,lName,weight,age,gender,height;
     Button btnCancel,btnChange;
@@ -27,12 +26,12 @@ public class ProfileActivity extends AppCompatActivity {
         final String username = bundle.getString("username");
 
         mUsername = (TextView)findViewById(R.id.username);
-        mFirstname = (EditText)findViewById(R.id.first_name);
-        mLastname = (EditText)findViewById(R.id.last_name);
-        mWeight = (EditText)findViewById(R.id.weight);
-        mAge = (EditText)findViewById(R.id.age);
-        mGender = (EditText)findViewById(R.id.gender);
-        mHeight = (EditText)findViewById(R.id.height);
+        mFirstname = (TextView)findViewById(R.id.first_name);
+        mLastname = (TextView)findViewById(R.id.last_name);
+        mWeight =(TextView)findViewById(R.id.weight);
+        mAge = (TextView)findViewById(R.id.age);
+        mGender = (TextView)findViewById(R.id.gender);
+        mHeight = (TextView)findViewById(R.id.height);
         db = new DatabaseHelper(this);
 
         setText(username);
@@ -58,16 +57,35 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void setText(String username) {
-        Cursor res = db.viewData();
+        Cursor res = db.viewData(username);
+        String fname="",lname="";
         if(res.getCount()==0) {
             Toast.makeText(ProfileActivity.this,"No entry exists",Toast.LENGTH_SHORT).show();
             return;
         }
-        StringBuffer buffer = new StringBuffer();
-
         while(res.moveToNext()) {
+            if(res.getString(1).equals(username)) {
+                System.out.println(res.getString(0));
+                System.out.println(res.getString(1));
+                System.out.println(res.getString(2));
+                System.out.println(res.getString(3));
+                System.out.println(res.getString(4));
+                System.out.println(res.getString(5));
+                System.out.println(res.getString(6));
+                System.out.println(res.getString(7));
+                System.out.println(res.getString(8));
 
+                mUsername.setText(res.getString(1));
+                mFirstname.setText(res.getString(3));
+                mLastname.setText(res.getString(4));
+                mAge.setText(res.getString(5));
+                mWeight.setText(res.getString(6));
+                mGender.setText(res.getString(7));
+                mHeight.setText(res.getString(8));
+            }
         }
+
+
 
     }
 

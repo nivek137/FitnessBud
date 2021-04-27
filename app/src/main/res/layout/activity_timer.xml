@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/kettlebell"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.workoutgenerator.RegisterActivity">
@@ -11,6 +12,8 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/text_view_countdown"
+        android:textColor="@color/colorPrimaryDark"
+
         android:layout_centerHorizontal="true"
         android:hint="Minutes"
         android:inputType="number"
@@ -18,8 +21,13 @@
 
     <Button
         android:id="@+id/button_set"
+
+        style="@style/ButtonStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ripple_effect"
+
         android:layout_alignTop="@+id/edit_text_input"
         android:layout_toEndOf="@+id/edit_text_input"
         android:text="Set"
@@ -37,16 +45,27 @@
 
     <Button
         android:id="@+id/button_start_pause"
+
+        style="@style/ButtonStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ripple_effect"
+
         android:layout_below="@+id/text_view_countdown"
         android:layout_centerHorizontal="true"
         android:text="start" />
 
     <Button
         android:id="@+id/button_reset"
+
+
+        style="@style/ButtonStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ripple_effect"
+
         android:layout_below="@+id/text_view_countdown"
         android:layout_marginStart="11dp"
         android:layout_toEndOf="@+id/button_start_pause"

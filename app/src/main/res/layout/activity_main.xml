@@ -63,7 +63,8 @@
                     android:layout_height="48dp"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:entries="@array/equipment_array1"
-                    android:spinnerMode="dialog" />
+                    android:spinnerMode="dialog"
+                    android:textColor="#E6AC55" />
 
 
             </LinearLayout>
@@ -158,6 +159,7 @@
                     style="@style/mySpinnerItemStyle"
                     android:layout_width="250dp"
                     android:layout_height="48dp"
+                    android:textColor="#E6AC55"
                     android:backgroundTint="@color/colorPrimaryDark" />
 
             </LinearLayout>

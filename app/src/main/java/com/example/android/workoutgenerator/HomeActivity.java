@@ -14,7 +14,7 @@ import com.example.android.workoutgenerator.data.WorkoutDbHelper;
 public class HomeActivity extends AppCompatActivity {
     int equipCount = 1;
     int movementCount = 1;
-    Button buttonProfile;
+    Button buttonProfile,buttonTimer;
 
     private WorkoutDbHelper mDbHelper;
     @Override
@@ -56,6 +56,15 @@ public class HomeActivity extends AppCompatActivity {
         moveSpinner3.setAdapter(moveAdapter2);
 
         mDbHelper = new WorkoutDbHelper(this);
+
+        buttonTimer = (Button)findViewById(R.id.btnTimer);
+        buttonTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,TimerActivity.class);
+                startActivity(intent);
+            }
+        });
 
         buttonProfile = (Button)findViewById(R.id.btnProfile);
         buttonProfile.setOnClickListener(new View.OnClickListener() {

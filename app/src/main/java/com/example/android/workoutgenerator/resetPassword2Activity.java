@@ -36,7 +36,7 @@ public class resetPassword2Activity extends AppCompatActivity {
                     boolean update = db.changePassword(password,username);
                     if(update==true) {
                         Toast.makeText(resetPassword2Activity.this,"Password changed successfully",Toast.LENGTH_SHORT).show();
-                        Intent moveToLogin = new Intent(resetPassword2Activity.this,MainActivity.class);
+                        Intent moveToLogin = new Intent(resetPassword2Activity.this,HomeActivity.class);
                         startActivity(moveToLogin);
                     } else {
                         Toast.makeText(resetPassword2Activity.this,"Password change failed",Toast.LENGTH_SHORT).show();
