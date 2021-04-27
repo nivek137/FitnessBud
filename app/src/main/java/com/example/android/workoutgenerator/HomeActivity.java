@@ -22,6 +22,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Intent i = getIntent();
+        Bundle bundle = getIntent().getExtras();
+        final String username = bundle.getString("username");
+
         Spinner equipSpinner1 = (Spinner) findViewById(R.id.equipment_spinner1);
         Spinner equipSpinner2 = (Spinner) findViewById(R.id.equipment_spinner2);
         Spinner equipSpinner3 = (Spinner) findViewById(R.id.equipment_spinner3);
@@ -37,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         equipSpinner2.setAdapter(equipAdapter2);
         equipSpinner3.setAdapter(equipAdapter2);
 
-        Spinner moveSpinner1 = (Spinner) findViewById(R.id.cfm_pw);
+        Spinner moveSpinner1 = (Spinner) findViewById(R.id.movement_spinner1);
         Spinner moveSpinner2 = (Spinner) findViewById(R.id.movements_spinner2);
         Spinner moveSpinner3 = (Spinner) findViewById(R.id.movements_spinner3);
         ArrayAdapter moveAdapter1 = ArrayAdapter.createFromResource(this,
@@ -58,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                intent.putExtra("username",username);
                 startActivity(intent);
             }
         });
@@ -72,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
     public void submit(View view){
         Intent intent = new Intent(this, WorkoutActivity.class);
         Spinner equipSpinner1 = (Spinner) findViewById(R.id.equipment_spinner1);
-        Spinner movementSpinner1 = (Spinner) findViewById(R.id.cfm_pw);
+        Spinner movementSpinner1 = (Spinner) findViewById(R.id.movement_spinner1);
         String equipSelection1 = equipSpinner1.getSelectedItem().toString();
         String movementSelection1 = movementSpinner1.getSelectedItem().toString();
         intent.putExtra("EquipSelection1", equipSelection1);

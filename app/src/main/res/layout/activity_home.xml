@@ -165,7 +165,7 @@
                     android:textSize="24sp" />
 
                 <Spinner
-                    android:id="@+id/cfm_pw"
+                    android:id="@+id/movement_spinner1"
                     style="@style/mySpinnerItemStyle"
                     android:layout_width="180dp"
                     android:layout_height="48dp"

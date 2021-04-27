@@ -99,4 +99,10 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         //long res = db.insert("registeruser",null,contentValues);
         return true;
     }
+
+    public Cursor viewData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from registeruser",null);
+        return cursor;
+    }
 }

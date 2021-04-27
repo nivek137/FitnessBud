@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         db = new DatabaseHelper(this);
         mTextUsername = (EditText)findViewById(R.id.username);
-        mTextPassword = (EditText)findViewById(R.id.cfm_pw);
+        mTextPassword = (EditText)findViewById(R.id.password);
         mButtonForgotPw = (Button)findViewById(R.id.btnForgotPassword);
         mButtonLogin = (Button)findViewById(R.id.btnConfirm);
         mButtonCreateAcc = (Button)findViewById(R.id.btnCreateAccount);
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 if(res==true) {
                     Toast.makeText(MainActivity.this,"Succesfully Logged in",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                    intent.putExtra("username",user);
                     startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this,"Login Error",Toast.LENGTH_SHORT).show();
@@ -51,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         // user clicks forgot password button
         mButtonForgotPw.setOnClickListener(new View.OnClickListener() {
